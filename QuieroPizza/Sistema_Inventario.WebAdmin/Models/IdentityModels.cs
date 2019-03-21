@@ -29,5 +29,11 @@ namespace Sistema_Inventario.WebAdmin.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Sistema_Inventario.WebAdmin.Models.Bodega> Bodegas { get; set; }
+
+        public System.Data.Entity.DbSet<Sistema_Inventario.WebAdmin.Models.Inventario> Inventarios { get; set; }
+
+        public System.Data.Entity.DbSet<Sistema_Inventario.WebAdmin.Models.InventarioDetalle> InventarioDetalles { get; set; }
     }
 }
