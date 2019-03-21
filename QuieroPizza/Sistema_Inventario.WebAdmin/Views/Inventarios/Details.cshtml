@@ -1,26 +1,90 @@
-﻿@model Sistema_Inventario.WebAdmin.Models.Inventario
+﻿@model Sistema_Inventario.WebAdmin.Models.InventarioDetalleViewmodel
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalle";
 }
 
-<h2>Details</h2>
+<div class="card o-hidden border-0 shadow-lg my-5">
+    <div class="card-body p-5">
+        <div class="row">
+            <div class="col-xl-8 col-lg-7">
 
-<div>
-    <h4>Inventario</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Bodega.Nombre)
-        </dt>
+                <h2>Detalle del inventario</h2>
 
-        <dd>
-            @Html.DisplayFor(model => model.Bodega.Nombre)
-        </dd>
+                <div>
+                    <h4>Inventario</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Id)
+                        </dt>
 
-    </dl>
+                        <dd>
+                            @Html.DisplayFor(model => model.Id)
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Bodega.Nombre)
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Bodega.Nombre)
+                        </dd>
+
+                    </dl>
+                </div>
+
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.InventarioDetalle.FirstOrDefault().Id)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.InventarioDetalle.FirstOrDefault().InventarioId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.InventarioDetalle.FirstOrDefault().ProductoId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.InventarioDetalle.FirstOrDefault().Ubicacion)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.InventarioDetalle.FirstOrDefault().Existencia)
+                                </th>
+                                
+                            </tr>
+
+                            @foreach (var item in Model.invedete)
+            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.InventarioId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProductoId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Ubicacion)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Existencia)
+                                    </td>
+                                </tr>
+                            }
+
+                        </table>
+                    </div>
+                </div>
+                <p>
+                   
+                    @Html.ActionLink("Volver", "Index")
+                </p>
+                </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+</div>
+</div>

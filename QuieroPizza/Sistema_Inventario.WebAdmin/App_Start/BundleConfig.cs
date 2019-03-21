@@ -9,7 +9,16 @@ namespace Sistema_Inventario.WebAdmin
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+
+                      
+                        "~/Scripts/vendor/jquery/jquery.min.js",
+                        "~/Scripts/vendor/bootstrap/js/bootstrap.bundle.min.js",
+                        "~/Scripts/vendor/jquery-easing/jquery.easing.min.js",
+                        "~/Scripts/sb-admin-2.min.js",
+                        "~/Scripts/vendor/chart.js/Chart.min.js",
+                        "~/Scripts/demo/chart-area-demo.js",
+                        "~/Scripts/demo/chart-pie-demo.js"
+                        ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -24,8 +33,10 @@ namespace Sistema_Inventario.WebAdmin
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                "~/Scripts/vendor/fontawesome-free/css/all.min.css",
+                      "~/Content/sb-admin-2.min.css"
+                      ));
+
         }
     }
 }

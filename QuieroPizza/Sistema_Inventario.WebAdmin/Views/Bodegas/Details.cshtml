@@ -4,23 +4,31 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="card o-hidden border-0 shadow-lg my-5">
+<div class="card-body p-5">
+    <div class="row">
+        <div class="col-xl-8 col-lg-7">
+            <h2>Detalle</h2>
 
-<div>
-    <h4>Bodega</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
+            <div>
+                <h4>Bodega</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.Nombre)
+                    </dd>
 
-    </dl>
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Volver", "Index")
+            </p>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    </div>

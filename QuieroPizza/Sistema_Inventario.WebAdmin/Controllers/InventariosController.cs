@@ -28,12 +28,25 @@ namespace Sistema_Inventario.WebAdmin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Inventario inventario = db.Inventarios.Find(id);
+           // var x = db.Inventarios.Include(i => i.InventarioDetalle).Where(t=>t.Id == id.Value).ToList();
+           
+            var inventario = db.Inventarios.Find(id);
+            var inv = db.InventarioDetalles.Include(v => v.Inventario).Where(t => t.InventarioId == id).ToList();
+
+            var viewmodel = new InventarioDetalleViewmodel
+            {
+                invedete = inv,
+                Bodega = inventario.Bodega,
+                BodegaId = inventario.BodegaId,
+                Id= inventario.Id
+            };
+
+         
             if (inventario == null)
             {
                 return HttpNotFound();
             }
-            return View(inventario);
+            return View(viewmodel);
         }
 
         // GET: Inventarios/Create
