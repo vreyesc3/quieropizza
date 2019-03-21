@@ -1,0 +1,3 @@
+﻿1>------ Operación Compilar iniciada: proyecto: QuieroPizza.Web, configuración: Debug Any CPU ------
+1>C:\Users\VictorReyes\Desktop\Lenguaje4\Repositorios\quieropizza\QuieroPizza\QuieroPizza.Web\Controllers\ProductosController.cs(15,35,15,45): error CS0246: The type or namespace name 'ProductoBL' could not be found (are you missing a using directive or an assembly reference?)
+========== Compilar: 0 correctos, 1 incorrectos, 1 actualizados, 0 omitidos ==========

@@ -328,3 +328,5 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+/QuieroPizza/SistemaInventario.Win
+/QuieroPizza/SistemaInventario.BL
